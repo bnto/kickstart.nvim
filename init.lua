@@ -102,7 +102,7 @@ vim.g.have_nerd_font = false
 vim.opt.number = true
 -- You can also add relative line numbers, to help with jumping.
 --  Experiment for yourself to see if you like it!
--- vim.opt.relativenumber = true
+vim.opt.relativenumber = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
@@ -189,6 +189,25 @@ vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left wind
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+
+-- CUSTOM Keybinds
+vim.keymap.set('n', '<leader>q', ':q<CR>', { desc = '[Q]uit Vim' })
+vim.keymap.set('n', '<leader>s', ':w<CR>', { desc = '[S]ave Document' })
+vim.keymap.set('n', '<leader>o', ':on<CR>', { desc = '[O]pen current window in full screen' })
+-- nnoremap <leader>f :Files<CR>
+-- nnoremap <leader>u :UndotreeToggle<CR>:UndotreeFocus<CR>
+-- nnoremap <leader>b :NvimTreeToggle<CR>
+
+-- Move visually
+vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
+vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
+
+-- Page Jumps
+vim.keymap.set('n', '<C-j>', '<C-d>zz')
+vim.keymap.set('n', '<C-k>', '<C-u>zz')
+
+-- Remap J (joint lines) to keep cursor in place
+vim.keymap.set('n', 'J', 'mzJ`z')
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
@@ -784,7 +803,7 @@ require('lazy').setup({
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      vim.cmd.colorscheme 'tokyonight-night'
+      vim.cmd.colorscheme 'tokyonight-storm'
 
       -- You can configure highlights by doing something like:
       vim.cmd.hi 'Comment gui=none'
