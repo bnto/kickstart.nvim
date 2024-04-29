@@ -160,6 +160,7 @@ vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.smartindent = true
+vim.g.netrw_liststyle = 3
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
@@ -205,7 +206,7 @@ vim.keymap.set('n', '<leader>o', ':on<CR>', { desc = '[O]pen current window in f
 -- nnoremap <leader>u :UndotreeToggle<CR>:UndotreeFocus<CR>
 -- nnoremap <leader>b :NvimTreeToggle<CR>
 
-vim.keymap.set('n', '<leader>b', ':Neotree toggle=true<CR>', { desc = 'Open Side[b]ar' })
+vim.keymap.set('n', '<leader>b', ':Neotree toggle=true reveal=true<CR>', { desc = 'Open Side[b]ar' })
 
 -- Move visually
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
